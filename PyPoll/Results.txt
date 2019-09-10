@@ -1,0 +1,7 @@
+Total Number of Votes: 3521001
+Candidates	# of Votes	% Won
+Khan		2218230		62
+Correy		704199		19
+Li		492939		13
+O'Tooley		105629		2
+The winner is Khan!
