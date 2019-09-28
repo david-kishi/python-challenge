@@ -1,5 +1,5 @@
 Total number of months: 86
-Net Total Profit/Loss: 38382578
-Average of Profit/Loss: 446309.05
-Greatest Profit was 1170593 on Feb-2012
-Greatest Loss was -1196225 on Sep-2013
+Net Total Profit/Loss: -196785
+Average of Profit/Loss: -98392.5
+Greatest Profit was 1926159 on Feb-2012
+Greatest Loss was -2196167 on Sep-2013

@@ -16,24 +16,33 @@ greatest_loss_date = ""
 with open(csv_path, 'r') as csv_in:
     reader = csv.reader(csv_in, delimiter=',')
     header = next(reader)
-
+    
     for row in reader:
-        # Count Number of Months
-        total_months += 1
+        if total_months == 0:
+            total_months += 1
+            previous = int(row[1])
+        else:
+            # Count Number of Months
+            total_months += 1
 
-        # Net total amount of Profit/Losses
-        total_profit_loss += int(row[1])
+            # Calculate profit/loss
+            difference = int(row[1]) - previous
 
-        # Average of Profit/Losses
-        average_profit_loss = total_profit_loss / total_months
+            # Average profit/loss
+            average_profit_loss += difference/2
 
-        # Greatest Profit/Loss
-        if int(row[1]) > greatest_profit:
-            greatest_profit = int(row[1])
-            greatest_profit_date = row[0]
-        elif int(row[1]) < greatest_loss:
-            greatest_loss = int(row[1])
-            greatest_loss_date = row[0]
+            # Net total amount of Profit/Losses
+            total_profit_loss += difference
+
+            # Greatest Profit/Loss
+            if difference > greatest_profit:
+                greatest_profit = difference
+                greatest_profit_date = row[0]
+            elif difference < greatest_loss:
+                greatest_loss = difference
+                greatest_loss_date = row[0]
+
+            previous = int(row[1])
 
 # Output results to terminal
 print(f"Total number of months: {total_months}")
