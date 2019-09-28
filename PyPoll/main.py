@@ -28,13 +28,16 @@ total_votes = sum(candidate_votes.values())
 print(f"Total Number of Votes: {total_votes}")
 print("Candidates\t# of Votes\t% Won")
 for key, value in candidate_votes.items():
-    print(f"{key}\t\t{value}\t\t{int((value*100)/total_votes)}")
+    vote_pct = str((value*100)/total_votes)
+    print(f"{key}\t\t{value}\t\t{vote_pct[0:5]}")
 print(f"The winner is {max(candidate_votes, key=candidate_votes.get)}!")
+
 
 # Output results to text file
 with open ("Results.txt", 'w') as out:
     out.write(f"Total Number of Votes: {total_votes}\n")
     out.write("Candidates\t# of Votes\t% Won\n")
     for key, value in candidate_votes.items():
-        out.write(f"{key}\t\t{value}\t\t{int((value*100)/total_votes)}")
+        vote_pct = str((value*100)/total_votes)
+        out.write(f"{key}\t\t{value}\t\t{vote_pct[0:5]}")
     out.write(f"The winner is {max(candidate_votes, key=candidate_votes.get)}!")
